@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimens_10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:id="@+id/initial"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="R"
+            android:id="@+id/tvInitial"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="A review by Ronaldo"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14sp"
+        android:id="@+id/reviewTitle"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/initial"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/dimens_10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Written by Ronaldo"
+        android:id="@+id/reviewSubTitle"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@+id/initial"
+        app:layout_constraintTop_toBottomOf="@+id/reviewTitle"
+        android:layout_marginStart="@dimen/dimens_10dp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="@string/lorem_ipsum"
+        android:id="@+id/reviewDesc"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@+id/initial"
+        app:layout_constraintTop_toBottomOf="@+id/reviewSubTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/dimens_5dp"
+        android:layout_marginStart="@dimen/dimens_10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

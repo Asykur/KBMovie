@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/dimens_20dp"
+    android:background="@color/blue"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popular"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/dimens_16dp"
+        android:textColor="@color/white"
+        android:id="@+id/tvCatPopular"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/upcoming"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCatPopular"
+        android:textSize="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_20dp"
+        android:textColor="@color/white"
+        android:id="@+id/tvCatUpComing"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/top_rated"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNowPlaying"
+        android:textSize="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_20dp"
+        android:textColor="@color/white"
+        android:id="@+id/tvCatToprated"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/now_playing"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCatUpComing"
+        android:textSize="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_20dp"
+        android:textColor="@color/white"
+        android:id="@+id/tvNowPlaying"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.DetailMovieActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/custom_toolbar" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pgDetail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimens_5dp"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/dimens_5dp"
+        app:cardElevation="2dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimens_10dp">
+
+            <ImageView
+                android:id="@+id/imgMovieDetail"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:background="@color/grey_light"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitleMovieDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_10dp"
+                android:layout_marginEnd="@dimen/dimens_10dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/imgMovieDetail"
+                app:layout_constraintRight_toLeftOf="@+id/btnFavoriteDetail"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Title" />
+
+            <com.sackcentury.shinebuttonlib.ShineButton
+                android:id="@+id/btnFavoriteDetail"
+                android:layout_width="@dimen/dimens_20dp"
+                android:layout_height="@dimen/dimens_20dp"
+                android:src="@color/grey_light"
+                app:allow_random_color="false"
+                app:big_shine_color="#FFD700"
+                app:btn_color="@color/grey_light"
+                app:btn_fill_color="#FFD700"
+                app:click_animation_duration="200"
+                app:enable_flashing="false"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shine_animation_duration="1500"
+                app:shine_count="8"
+                app:shine_distance_multiple="1.5"
+                app:shine_turn_angle="10"
+                app:siShape="@raw/heart"
+                app:small_shine_color="@color/blue"
+                app:small_shine_offset_angle="20" />
+
+
+            <TextView
+                android:id="@+id/tvReleaseDateDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_10dp"
+                android:layout_marginTop="@dimen/dimens_5dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toTopOf="@+id/tvDescMovieDetail"
+                app:layout_constraintLeft_toRightOf="@+id/imgMovieDetail"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleMovieDetail"
+                tools:text="12 July 2019" />
+
+            <TextView
+                android:id="@+id/tvDescMovieDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_10dp"
+                android:layout_marginTop="@dimen/dimens_5dp"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@+id/imgMovieDetail"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvReleaseDateDetail"
+                tools:text="@string/lorem_ipsum" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reviews"
+        android:textSize="@dimen/text_16sp"
+        android:textStyle="bold"
+        android:id="@+id/tvReviewTitle"
+        app:layout_constraintTop_toBottomOf="@+id/cardItem"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/dimens_10dp"
+        android:layout_marginStart="@dimen/dimens_10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:id="@+id/layoutEmptyReview"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewTitle"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_18sp"
+            android:gravity="center"
+            android:text="@string/oops"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/there_is_no_review_of_this_film"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/rvReviews"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="@dimen/dimens_10dp"
+        android:layout_marginEnd="@dimen/dimens_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
